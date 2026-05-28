@@ -1,0 +1,168 @@
+@use '../styles/variables' as *;
+
+.menu {
+  padding: 5rem $container-pad;
+  background: $color-black;
+
+  &__container {
+    max-width: $container-max;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  &__tag {
+    display: inline-block;
+    font-family: $font-sans;
+    font-size: 0.62rem;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: $color-gold;
+    margin-bottom: 0.75rem;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 300;
+    color: $color-cream;
+    margin-bottom: 1rem;
+  }
+
+  &__divider {
+    width: 38px;
+    height: 1px;
+    background: $color-gold;
+    margin: 0 auto;
+    opacity: 0.5;
+  }
+
+  &__tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  &__tab {
+    font-family: $font-sans;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $color-cream-muted;
+    padding: 0.5rem 1.2rem;
+    border: $border-gold;
+    transition: all $transition;
+    cursor: pointer;
+    background: none;
+
+    &:hover, &--active {
+      background: $color-gold;
+      color: $color-black;
+      border-color: $color-gold;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+
+    @media (min-width: $bp-sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $bp-lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  &__reserve-btn {
+    display: inline-block;
+    border: $border-gold;
+    color: $color-gold;
+    font-family: $font-sans;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    padding: 1rem 2.5rem;
+    transition: all $transition;
+
+    &:hover {
+      background: $color-gold;
+      color: $color-black;
+    }
+  }
+}
+
+.dish-card {
+  background: $color-dark-card;
+  border: $border-gold;
+  overflow: hidden;
+  transition: transform $transition, border-color $transition;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba($color-gold, 0.55);
+  }
+
+  &__img {
+    height: 150px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.7rem;
+  }
+
+  &__cat {
+    font-family: $font-sans;
+    font-size: 0.58rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: $color-gold;
+    background: rgba($color-black, 0.55);
+    padding: 0.22rem 0.55rem;
+  }
+
+  &__body { padding: 1.2rem; }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.45rem;
+  }
+
+  &__name {
+    font-family: $font-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: $color-cream;
+    line-height: 1.2;
+  }
+
+  &__price {
+    font-family: $font-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $color-gold;
+    white-space: nowrap;
+  }
+
+  &__desc {
+    font-size: 0.77rem;
+    color: $color-cream-muted;
+    line-height: 1.65;
+    font-weight: 300;
+  }
+}

@@ -1,0 +1,44 @@
+import { useTranslation } from 'react-i18next'
+import heroImg from '../assets/hero.png'
+import './About.scss'
+
+export default function About() {
+  const { t } = useTranslation()
+
+  return (
+    <section id="apropos" className="about">
+      <div className="about__container">
+        <div className="about__text">
+          <span className="about__tag">{t('about.tag')}</span>
+          <h2 className="about__title">
+            {t('about.title_line1')}<br />{t('about.title_line2')}
+          </h2>
+          <div className="about__divider" />
+          <p className="about__desc">{t('about.p1')}</p>
+          <p className="about__desc">{t('about.p2')}</p>
+          <div className="about__facts">
+            <div className="about__fact">
+              <span className="about__fact-value">{t('about.fact1_value')}</span>
+              <span className="about__fact-label">{t('about.fact1_label')}</span>
+            </div>
+            <div className="about__fact">
+              <span className="about__fact-value">{t('about.fact2_value')}</span>
+              <span className="about__fact-label">{t('about.fact2_label')}</span>
+            </div>
+            <div className="about__fact">
+              <span className="about__fact-value">{t('about.fact3_value')}</span>
+              <span className="about__fact-label">{t('about.fact3_label')}</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="about__visual">
+          <div className="about__frame">
+            <img src={heroImg} alt="Intérieur Vila Thaï Lounge" className="about__img" />
+            <div className="about__frame-accent" />
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

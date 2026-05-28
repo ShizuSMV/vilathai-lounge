@@ -1,0 +1,101 @@
+@use '../styles/variables' as *;
+
+.cocktails {
+  background: $color-black;
+
+  &__inner {
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 5rem $container-pad;
+    text-align: center;
+  }
+
+  &__tag {
+    font-family: $font-sans;
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: $color-gold;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    color: $color-cream;
+    line-height: 1.1;
+    margin-bottom: 0.7rem;
+  }
+
+  &__subtitle {
+    font-size: 0.88rem;
+    color: $color-cream-muted;
+    font-style: italic;
+    font-family: $font-serif;
+    max-width: 480px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+  }
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+  }
+
+  &__card {
+    flex: 1 1 240px;
+    max-width: 320px;
+    background: $color-dark-card;
+    border: $border-gold;
+    padding: 2.25rem 1.5rem 1.75rem;
+    position: relative;
+    text-align: center;
+    transition: border-color $transition, transform $transition;
+
+    &:hover {
+      border-color: rgba(201, 168, 76, 0.55);
+      transform: translateY(-3px);
+    }
+
+    &-accent {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2.5rem;
+      height: 2px;
+      background: $color-gold;
+    }
+  }
+
+  &__name {
+    font-family: $font-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: $color-gold;
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+  }
+
+  &__desc {
+    font-size: 0.78rem;
+    color: $color-cream-muted;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+  }
+
+  &__price {
+    font-family: $font-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: $color-cream;
+    display: block;
+    border-top: $border-gold;
+    padding-top: 0.85rem;
+  }
+}

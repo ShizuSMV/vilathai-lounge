@@ -1,0 +1,25 @@
+$color-black:      #0f0f0f;
+$color-dark:       #1a1518;
+$color-dark-card:  #1f1b1d;
+$color-gold:       #c9a84c;
+$color-gold-light: #d9b86a;
+$color-cream:      #f5f0eb;
+$color-cream-muted:#a8a09a;
+$color-gray:       #555;
+
+$font-serif: 'Cormorant Garamond', Georgia, serif;
+$font-sans:  'Inter', system-ui, -apple-system, sans-serif;
+
+$transition:      0.3s ease;
+$transition-slow: 0.6s ease;
+
+$border-gold:       1px solid rgba(201, 168, 76, 0.25);
+$border-gold-hover: 1px solid rgba(201, 168, 76, 0.65);
+
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+$container-max: 1200px;
+$container-pad: 1.25rem;

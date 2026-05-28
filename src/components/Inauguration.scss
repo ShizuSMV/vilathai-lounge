@@ -1,0 +1,216 @@
+@use '../styles/variables' as *;
+
+.inauguration {
+  background: $color-dark;
+  border-top: $border-gold;
+  border-bottom: $border-gold;
+
+  &__inner {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 5rem $container-pad;
+    text-align: center;
+  }
+
+  &__tag {
+    font-family: $font-sans;
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: $color-gold;
+    margin-bottom: 1.2rem;
+
+    &::before,
+    &::after {
+      content: '✦';
+      margin: 0 0.6em;
+      opacity: 0.5;
+    }
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 300;
+    color: $color-cream;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    font-family: $font-serif;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 300;
+    font-style: italic;
+    color: $color-gold;
+    margin-bottom: 2.5rem;
+  }
+
+  &__badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    border: 1px solid $color-gold;
+    padding: 1.25rem 2.5rem;
+    margin-bottom: 2.5rem;
+
+    &-date {
+      font-family: $font-serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: $color-cream;
+      letter-spacing: 0.04em;
+    }
+
+    &-time {
+      font-family: $font-sans;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: $color-gold;
+    }
+  }
+
+  &__countdown {
+    margin-bottom: 3rem;
+
+    &-label {
+      font-family: $font-sans;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: $color-cream-muted;
+      margin-bottom: 1.2rem;
+    }
+
+    &-grid {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      @media (min-width: $bp-sm) {
+        gap: 2rem;
+      }
+    }
+
+    &-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      min-width: 3.5rem;
+    }
+
+    &-num {
+      font-family: $font-serif;
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 300;
+      color: $color-gold;
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+
+    &-text {
+      font-family: $font-sans;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: $color-cream-muted;
+    }
+  }
+
+  &__program-title {
+    font-family: $font-sans;
+    font-size: 0.6rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: $color-cream-muted;
+    margin-bottom: 2rem;
+  }
+
+  &__timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 3rem;
+    max-width: 520px;
+    text-align: left;
+  }
+
+  &__step {
+    display: grid;
+    grid-template-columns: 4.5rem 1.5rem 1fr;
+    align-items: start;
+    padding-bottom: 1.6rem;
+    position: relative;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: calc(4.5rem + 0.75rem - 0.5px);
+      top: calc(0.3rem + 9px);
+      bottom: 0;
+      width: 1px;
+      background: rgba(201, 168, 76, 0.2);
+    }
+
+    &-time {
+      font-family: $font-serif;
+      font-size: 0.85rem;
+      color: $color-gold;
+      text-align: right;
+      padding-right: 1rem;
+      padding-top: 0.15rem;
+    }
+
+    &-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: $color-gold;
+      margin-top: 0.3rem;
+      justify-self: center;
+    }
+
+    &-content {
+      padding-left: 0.75rem;
+
+      strong {
+        font-family: $font-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        color: $color-cream;
+        display: block;
+        margin-bottom: 0.15rem;
+      }
+
+      span {
+        font-size: 0.78rem;
+        color: $color-cream-muted;
+      }
+    }
+  }
+
+  &__cta {
+    display: inline-block;
+    padding: 0.9rem 2.5rem;
+    border: 1px solid $color-gold;
+    font-family: $font-sans;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $color-gold;
+    transition: background $transition, color $transition;
+
+    &:hover {
+      background: $color-gold;
+      color: $color-black;
+    }
+  }
+}

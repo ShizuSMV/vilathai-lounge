@@ -1,0 +1,66 @@
+@use '../styles/variables' as *;
+
+.resv {
+  padding: 5rem $container-pad;
+  background: $color-black;
+
+  &__container {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__tag {
+    display: inline-block;
+    font-family: $font-sans;
+    font-size: 0.62rem;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: $color-gold;
+    margin-bottom: 0.75rem;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 300;
+    color: $color-cream;
+    margin-bottom: 1rem;
+  }
+
+  &__divider {
+    width: 38px;
+    height: 1px;
+    background: $color-gold;
+    margin: 0 auto 1rem;
+    opacity: 0.5;
+  }
+
+  &__subtitle {
+    font-size: 0.85rem;
+    color: $color-cream-muted;
+    font-style: italic;
+    font-family: $font-serif;
+  }
+
+  &__widget {
+    border: $border-gold;
+    overflow: hidden;
+    background: $color-dark-card;
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 700px;
+      border: none;
+
+      @media (max-width: $bp-md) {
+        height: 780px;
+      }
+    }
+  }
+}

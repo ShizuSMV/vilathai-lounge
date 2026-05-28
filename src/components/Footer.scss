@@ -1,0 +1,148 @@
+@use '../styles/variables' as *;
+
+.footer {
+  background: $color-dark;
+  border-top: $border-gold;
+
+  &__grid {
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 3.5rem $container-pad;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+
+    @media (min-width: $bp-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $bp-lg) {
+      grid-template-columns: 2fr 1fr 1.5fr 1fr;
+      gap: 3rem;
+    }
+  }
+
+  &__brand {}
+
+  &__logo {
+    font-family: $font-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: $color-gold;
+    display: block;
+    margin-bottom: 0.7rem;
+    letter-spacing: 0.04em;
+
+    em {
+      display: block;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 0.56em;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: $color-cream-muted;
+      margin-top: 0.15em;
+    }
+  }
+
+  &__tagline {
+    font-size: 0.82rem;
+    color: $color-cream-muted;
+    font-style: italic;
+    font-family: $font-serif;
+    line-height: 1.6;
+  }
+
+  &__col {
+    h4 {
+      font-family: $font-sans;
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: $color-gold;
+      margin-bottom: 1rem;
+    }
+
+    address {
+      font-style: normal;
+      font-size: 0.84rem;
+      color: $color-cream-muted;
+      line-height: 1.8;
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      font-size: 0.84rem;
+      color: $color-cream-muted;
+      transition: color $transition;
+      display: block;
+      &:hover { color: $color-gold; }
+    }
+  }
+
+  &__hours {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: $color-cream-muted;
+
+      span:first-child {
+        color: $color-cream;
+      }
+    }
+  }
+
+  &__access {
+    margin-top: 1.5rem;
+
+    h4 { margin-top: 0; }
+
+    p {
+      font-size: 0.78rem;
+      color: $color-cream-muted;
+      line-height: 1.7;
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  &__bottom {
+    max-width: $container-max;
+    margin: 0 auto;
+    padding: 1.2rem $container-pad;
+    border-top: $border-gold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    p {
+      font-size: 0.7rem;
+      color: $color-gray;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &__top {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $color-gold !important;
+    transition: opacity $transition;
+
+    &:hover { opacity: 0.7; }
+  }
+}
