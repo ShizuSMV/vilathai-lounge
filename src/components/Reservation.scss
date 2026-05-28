@@ -47,6 +47,38 @@
     font-family: $font-serif;
   }
 
+  &__closed {
+    border: $border-gold;
+    padding: 4rem 2rem;
+    text-align: center;
+    background: $color-dark-card;
+
+    &-icon {
+      font-size: 1.5rem;
+      color: $color-gold;
+      margin-bottom: 1.2rem;
+      opacity: 0.7;
+    }
+
+    &-title {
+      font-family: $font-serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 300;
+      color: $color-cream;
+      margin-bottom: 0.8rem;
+    }
+
+    &-msg {
+      font-family: $font-serif;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: $color-cream-muted;
+      line-height: 1.7;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+  }
+
   &__widget {
     border: $border-gold;
     overflow: hidden;

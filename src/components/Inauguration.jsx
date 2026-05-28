@@ -71,6 +71,12 @@ export default function Inauguration() {
       <div className="inauguration__inner">
 
         <p className="inauguration__tag">{t('inauguration.tag')}</p>
+
+        <div className="inauguration__badge">
+          <span className="inauguration__badge-date">{t('inauguration.date')}</span>
+          <span className="inauguration__badge-time">{t('inauguration.time')}</span>
+        </div>
+
         <h2 className="inauguration__title">{t('inauguration.title')}</h2>
 
         <div className="inauguration__subtitle-wrap">
@@ -80,11 +86,6 @@ export default function Inauguration() {
           <p className={`inauguration__sub inauguration__sub--after${revealed ? ' inauguration__sub--in' : ''}`}>
             Vila&nbsp;Thaï <span>Lounge</span>
           </p>
-        </div>
-
-        <div className="inauguration__badge">
-          <span className="inauguration__badge-date">{t('inauguration.date')}</span>
-          <span className="inauguration__badge-time">{t('inauguration.time')}</span>
         </div>
 
         {!revealed && (
@@ -135,7 +136,9 @@ export default function Inauguration() {
           </ul>
         </div>
 
-        <a href="#reservation" className="inauguration__cta">{t('inauguration.cta')}</a>
+        {!revealed && (
+          <a href="#reservation" className="inauguration__cta">{t('inauguration.cta')}</a>
+        )}
 
       </div>
     </section>

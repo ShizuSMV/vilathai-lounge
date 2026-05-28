@@ -81,7 +81,9 @@
     "submit": "Confirm reservation",
     "success_title": "Request sent",
     "success_msg": "We will confirm your reservation as soon as possible.",
-    "success_again": "New reservation"
+    "success_again": "New reservation",
+    "closed_tonight_title": "Reservations closed tonight",
+    "closed_tonight_msg": "Vila Thaï Lounge is hosting a private event tonight. Bookings reopen from Tuesday."
   },
   "inauguration": {
     "tag": "Event",
