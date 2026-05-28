@@ -1,3 +1,5 @@
 [build]
-builder = "DOCKERFILE"
-dockerfilePath = "Dockerfile"
+builder = "RAILPACK"
+
+[variables]
+RAILPACK_INSTALL_CMD = "npm install"
