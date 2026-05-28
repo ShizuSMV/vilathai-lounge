@@ -1,14 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { EVENT_DATE, STEP_OFFSETS, OFFSET_UNIT, END_TIME } from '../config/event'
 import './Inauguration.scss'
-
-// TEST : timer 3s, étapes toutes les 4s, fin à 25s
-// PROD  : EVENT_DATE = new Date('2026-06-20T19:00:00'), STEP_OFFSETS en minutes, END_OFFSET = 330
-const TEST_MODE    = true
-const EVENT_DATE   = new Date(Date.now() + 3000)
-const STEP_OFFSETS = TEST_MODE ? [0, 4, 8, 12, 16]   : [0, 60, 150, 210, 300]
-const END_OFFSET   = TEST_MODE ? 25                   : 330
-const OFFSET_UNIT  = TEST_MODE ? 1000 : 60000  // ms par unité (secondes vs minutes)
 
 const STEPS = ['s1', 's2', 's3', 's4', 's5']
 
@@ -16,7 +9,6 @@ const STEP_TIMES = STEPS.map((key, i) => ({
   key,
   time: new Date(EVENT_DATE.getTime() + STEP_OFFSETS[i] * OFFSET_UNIT),
 }))
-const END_TIME = new Date(EVENT_DATE.getTime() + END_OFFSET * OFFSET_UNIT)
 
 function useCountdown() {
   const [state, setState] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0, done: false })
