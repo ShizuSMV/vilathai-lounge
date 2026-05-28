@@ -5,6 +5,17 @@
   border-top: $border-gold;
   border-bottom: $border-gold;
 
+  &__canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    display: none;
+    transition: opacity 0.8s ease;
+  }
+
   &__inner {
     max-width: 820px;
     margin: 0 auto;
@@ -36,17 +47,72 @@
     color: $color-cream;
     line-height: 1.1;
     margin-bottom: 0.5rem;
+    transition: text-shadow 0.6s ease;
   }
 
-  &__subtitle {
-    font-family: $font-serif;
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    font-weight: 300;
-    font-style: italic;
-    color: $color-gold;
+  &--revealed &__title {
+    animation: goldPulse 2.5s ease-in-out infinite alternate;
+  }
+
+  // ── Subtitle flip ──────────────────────────────────────────
+  &__subtitle-wrap {
+    position: relative;
+    height: 2.8rem;
     margin-bottom: 2.5rem;
+
+    @media (min-width: $bp-md) { height: 2.2rem; }
   }
 
+  &__sub {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.55s ease, transform 0.55s ease;
+    font-family: $font-serif;
+    line-height: 1.3;
+
+    &--before {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-weight: 300;
+      font-style: italic;
+      color: $color-gold;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &--out {
+      opacity: 0;
+      transform: translateY(-14px);
+      pointer-events: none;
+    }
+
+    &--after {
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      font-weight: 300;
+      color: $color-gold;
+      opacity: 0;
+      transform: translateY(14px);
+      letter-spacing: 0.06em;
+      pointer-events: none;
+
+      span {
+        font-weight: 600;
+        color: $color-cream;
+        margin-left: 0.2em;
+      }
+    }
+
+    &--in {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+      animation: goldPulse 2.5s ease-in-out 0.6s infinite alternate;
+    }
+  }
+
+  // ── Badge ──────────────────────────────────────────────────
   &__badge {
     display: inline-flex;
     flex-direction: column;
@@ -73,6 +139,7 @@
     }
   }
 
+  // ── Countdown ─────────────────────────────────────────────
   &__countdown {
     margin-bottom: 3rem;
 
@@ -90,9 +157,7 @@
       justify-content: center;
       gap: 1rem;
 
-      @media (min-width: $bp-sm) {
-        gap: 2rem;
-      }
+      @media (min-width: $bp-sm) { gap: 2rem; }
     }
 
     &-unit {
@@ -121,6 +186,17 @@
     }
   }
 
+  // ── Reveal message ────────────────────────────────────────
+  &__reveal-msg {
+    font-family: $font-serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: $color-gold;
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 0.8s ease 0.3s both;
+  }
+
+  // ── Program / timeline ────────────────────────────────────
   &__program-title {
     font-family: $font-sans;
     font-size: 0.6rem;
@@ -145,9 +221,7 @@
     padding-bottom: 1.6rem;
     position: relative;
 
-    &:last-child {
-      padding-bottom: 0;
-    }
+    &:last-child { padding-bottom: 0; }
 
     &:not(:last-child)::after {
       content: '';
@@ -196,6 +270,7 @@
     }
   }
 
+  // ── CTA ───────────────────────────────────────────────────
   &__cta {
     display: inline-block;
     padding: 0.9rem 2.5rem;
@@ -213,4 +288,15 @@
       color: $color-black;
     }
   }
+}
+
+// ── Keyframes ───────────────────────────────────────────────
+@keyframes goldPulse {
+  from { text-shadow: 0 0 8px rgba(201, 168, 76, 0.2); }
+  to   { text-shadow: 0 0 24px rgba(201, 168, 76, 0.7), 0 0 48px rgba(201, 168, 76, 0.25); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
