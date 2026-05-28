@@ -44,6 +44,11 @@
     transition: box-shadow 1.2s ease;
   }
 
+  &--farewell {
+    animation: farewell 1.8s cubic-bezier(0.4, 0, 1, 1) forwards;
+    pointer-events: none;
+  }
+
   &--revealed &__title {
     animation: glowSoft 3.5s ease-in-out 0.2s infinite alternate;
   }
@@ -308,6 +313,12 @@
 }
 
 // ── Keyframes ───────────────────────────────────────────────
+@keyframes farewell {
+  0%   { opacity: 1;   transform: translateY(0)     scale(1);    filter: blur(0);    }
+  40%  { opacity: 0.6; transform: translateY(-12px) scale(1.02); filter: blur(3px);  }
+  100% { opacity: 0;   transform: translateY(-40px) scale(1.05); filter: blur(14px); }
+}
+
 @keyframes dotPing {
   0%   { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.7); }
   70%  { box-shadow: 0 0 0 10px rgba(201, 168, 76, 0); }

@@ -52,14 +52,23 @@ export default function Inauguration() {
   const { t }                                    = useTranslation()
   const { days, hours, minutes, seconds, done }  = useCountdown()
   const now                                      = useNow()
-  const [revealed, setRevealed]                  = useState(false)
+  const [revealed, setRevealed] = useState(false)
+  const [fading,   setFading]   = useState(false)
+  const [gone,     setGone]     = useState(false)
 
   useEffect(() => {
     if (done && !revealed) setRevealed(true)
   }, [done, revealed])
 
-  // Section disparaît après END_TIME
-  if (now >= END_TIME) return null
+  useEffect(() => {
+    if (now >= END_TIME && !fading && !gone) {
+      setFading(true)
+      const tid = setTimeout(() => setGone(true), 1800)
+      return () => clearTimeout(tid)
+    }
+  }, [now, fading, gone])
+
+  if (gone) return null
 
   // Étapes actives (l'heure est passée)
   const activeKeys = new Set(STEP_TIMES.filter(s => now >= s.time).map(s => s.key))
@@ -67,7 +76,7 @@ export default function Inauguration() {
   const currentKey = [...STEP_TIMES].reverse().find(s => now >= s.time)?.key
 
   return (
-    <section id="evenement" className={`inauguration${revealed ? ' inauguration--revealed' : ''}`}>
+    <section id="evenement" className={`inauguration${revealed ? ' inauguration--revealed' : ''}${fading ? ' inauguration--farewell' : ''}`}>
       <div className="inauguration__inner">
 
         <p className="inauguration__tag">{t('inauguration.tag')}</p>
