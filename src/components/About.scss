@@ -1,10 +1,30 @@
 @use '../styles/variables' as *;
 
 .about {
+  position: relative;
+  overflow: hidden;
   padding: 5rem $container-pad;
-  background: $color-dark;
+
+  &__bg {
+    position: absolute;
+    inset: -5%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px);
+    transform: scale(1.08);
+    z-index: 0;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba($color-black, 0.78);
+    z-index: 1;
+  }
 
   &__container {
+    position: relative;
+    z-index: 2;
     max-width: $container-max;
     margin: 0 auto;
     display: flex;
@@ -96,14 +116,14 @@
 
   &__frame {
     position: relative;
-    width: min(420px, 100%);
+    width: min(380px, 100%);
   }
 
   &__img {
     width: 100%;
-    aspect-ratio: 4/5;
+    aspect-ratio: 3/4;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center top;
     display: block;
   }
 
@@ -113,8 +133,36 @@
     right: -1.1rem;
     width: 55%;
     height: 55%;
-    border-right: 1px solid rgba($color-gold, 0.3);
-    border-bottom: 1px solid rgba($color-gold, 0.3);
+    border-right: 1px solid rgba($color-gold, 0.35);
+    border-bottom: 1px solid rgba($color-gold, 0.35);
     pointer-events: none;
+  }
+
+  &__gerant {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 1.25rem 1.25rem;
+    background: linear-gradient(to top, rgba($color-black, 0.88) 60%, transparent);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    &-name {
+      font-family: $font-serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: $color-cream;
+      letter-spacing: 0.04em;
+    }
+
+    &-role {
+      font-family: $font-sans;
+      font-size: 0.58rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: $color-gold;
+    }
   }
 }

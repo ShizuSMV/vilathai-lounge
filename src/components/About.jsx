@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
-import heroImg from '../assets/hero.png'
+import sayImg from '../assets/img/Say.webp'
+import bgImg  from '../assets/img/background.webp'
 import './About.scss'
 
 export default function About() {
@@ -7,6 +8,9 @@ export default function About() {
 
   return (
     <section id="apropos" className="about">
+      <div className="about__bg" style={{ backgroundImage: `url(${bgImg})` }} />
+      <div className="about__overlay" />
+
       <div className="about__container">
         <div className="about__text">
           <span className="about__tag">{t('about.tag')}</span>
@@ -34,8 +38,12 @@ export default function About() {
 
         <div className="about__visual">
           <div className="about__frame">
-            <img src={heroImg} alt="Intérieur Vila Thaï Lounge" className="about__img" />
+            <img src={sayImg} alt="Say — Gérant Vila Thaï Lounge" className="about__img" />
             <div className="about__frame-accent" />
+            <div className="about__gerant">
+              <span className="about__gerant-name">Say</span>
+              <span className="about__gerant-role">{t('about.gerant_role')}</span>
+            </div>
           </div>
         </div>
       </div>

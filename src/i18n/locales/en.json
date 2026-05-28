@@ -26,7 +26,8 @@
     "fact2_value": "Thai",
     "fact2_label": "Authentic cuisine",
     "fact3_value": "Lounge",
-    "fact3_label": "Premium atmosphere"
+    "fact3_label": "Premium atmosphere",
+    "gerant_role": "Manager"
   },
   "menu": {
     "tag": "À la carte",
