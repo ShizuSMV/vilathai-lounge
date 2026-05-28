@@ -145,7 +145,12 @@ export default function Inauguration() {
           </ul>
         </div>
 
-        {!revealed && (
+        {revealed ? (
+          <div className="inauguration__closed">
+            <p className="inauguration__closed-title">{t('reservation.closed_tonight_title')}</p>
+            <p className="inauguration__closed-msg">{t('reservation.closed_tonight_msg')}</p>
+          </div>
+        ) : (
           <a href="#reservation" className="inauguration__cta">{t('inauguration.cta')}</a>
         )}
 

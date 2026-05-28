@@ -292,6 +292,27 @@
     }
   }
 
+  // ── Closed ────────────────────────────────────────────────
+  &__closed {
+    animation: fadeInUp 0.7s ease 0.2s both;
+
+    &-title {
+      font-family: $font-serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: $color-cream;
+      margin-bottom: 0.5rem;
+    }
+
+    &-msg {
+      font-family: $font-serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: $color-cream-muted;
+      line-height: 1.7;
+    }
+  }
+
   // ── CTA ───────────────────────────────────────────────────
   &__cta {
     display: inline-block;
