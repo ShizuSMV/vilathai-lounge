@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import heroImg from '../assets/hero.png'
+import heroBg from '../assets/img/salle-ensemble.webp'
 import './Hero.scss'
 
 export default function Hero() {
@@ -7,7 +7,7 @@ export default function Hero() {
 
   return (
     <section id="accueil" className="hero">
-      <div className="hero__bg" style={{ backgroundImage: `url(${heroImg})` }} />
+      <div className="hero__bg" style={{ backgroundImage: `url(${heroBg})` }} />
       <div className="hero__overlay" />
 
       <div className="hero__content">

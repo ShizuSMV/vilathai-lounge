@@ -52,12 +52,12 @@
     "tag": "Découvrir",
     "title": "Notre Univers",
     "subtitle": "Un cadre unique où l'Orient rencontre l'élégance européenne",
-    "alt1": "La salle du restaurant",
-    "alt2": "Décoration intérieure",
-    "alt3": "Notre cuisine thaï",
-    "alt4": "Plats du chef",
-    "alt5": "Ambiance lounge",
-    "alt6": "Les chandeliers"
+    "alt1": "La salle principale",
+    "alt2": "Ambiance lounge",
+    "alt3": "Le bar",
+    "alt4": "Table dressée",
+    "alt5": "Décoration & bougies",
+    "alt6": "Notre enseigne"
   },
   "reservation": {
     "tag": "Table",

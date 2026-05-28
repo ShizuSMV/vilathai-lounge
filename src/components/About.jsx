@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
-import sayImg from '../assets/img/Say.webp'
-import bgImg  from '../assets/img/background.webp'
+import sayImg from '../assets/img/say-portrait.webp'
+import bgImg  from '../assets/img/salle-ensemble.webp'
 import './About.scss'
 
 export default function About() {

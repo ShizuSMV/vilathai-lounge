@@ -52,12 +52,12 @@
     "tag": "Discover",
     "title": "Our World",
     "subtitle": "A unique setting where the Orient meets European elegance",
-    "alt1": "The dining room",
-    "alt2": "Interior decor",
-    "alt3": "Our Thai kitchen",
-    "alt4": "Chef's dishes",
-    "alt5": "Lounge ambience",
-    "alt6": "The chandeliers"
+    "alt1": "The main dining room",
+    "alt2": "Lounge ambience",
+    "alt3": "The bar",
+    "alt4": "Table setting",
+    "alt5": "Decor & candlelight",
+    "alt6": "Our sign"
   },
   "reservation": {
     "tag": "Table",

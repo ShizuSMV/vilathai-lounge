@@ -1,14 +1,19 @@
 import { useTranslation } from 'react-i18next'
-import heroImg from '../assets/hero.png'
+import imgSalle     from '../assets/img/salle-principale.webp'
+import imgLounge    from '../assets/img/salle-lounge.webp'
+import imgBar       from '../assets/img/bar-lounge.webp'
+import imgTable     from '../assets/img/table-dressee.webp'
+import imgDecor     from '../assets/img/decor-mains-or.webp'
+import imgEnseigne  from '../assets/img/enseigne.webp'
 import './Gallery.scss'
 
 const ITEMS = [
-  { id: 1, featured: true,  pos: '50% 20%', filter: 'brightness(0.9)' },
-  { id: 2, featured: false, pos: '15% 50%', filter: 'brightness(0.85) contrast(1.1)' },
-  { id: 3, featured: false, pos: '85% 40%', filter: 'brightness(0.8) saturate(0.9)' },
-  { id: 4, featured: false, pos: '50% 70%', filter: 'brightness(0.9) contrast(1.05)' },
-  { id: 5, featured: true,  pos: '50% 50%', filter: 'brightness(0.85)' },
-  { id: 6, featured: false, pos: '70% 25%', filter: 'brightness(0.8) saturate(1.1)' },
+  { img: imgSalle,    featured: true,  alt: 'alt1' },
+  { img: imgLounge,   featured: false, alt: 'alt2' },
+  { img: imgBar,      featured: false, alt: 'alt3' },
+  { img: imgTable,    featured: false, alt: 'alt4' },
+  { img: imgDecor,    featured: true,  alt: 'alt5' },
+  { img: imgEnseigne, featured: false, alt: 'alt6' },
 ]
 
 export default function Gallery() {
@@ -25,19 +30,15 @@ export default function Gallery() {
         </div>
 
         <div className="gallery__grid">
-          {ITEMS.map(item => (
+          {ITEMS.map((item, i) => (
             <div
-              key={item.id}
+              key={i}
               className={`gallery__item${item.featured ? ' gallery__item--featured' : ''}`}
             >
               <div className="gallery__cell">
-                <img
-                  src={heroImg}
-                  alt={t(`gallery.alt${item.id}`)}
-                  style={{ objectPosition: item.pos, filter: item.filter }}
-                />
+                <img src={item.img} alt={t(`gallery.${item.alt}`)} />
                 <div className="gallery__cell-overlay">
-                  <span>{t(`gallery.alt${item.id}`)}</span>
+                  <span>{t(`gallery.${item.alt}`)}</span>
                 </div>
               </div>
             </div>
