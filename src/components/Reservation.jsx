@@ -28,12 +28,10 @@ export default function Reservation() {
               <p className="resv__subtitle">{t('reservation.subtitle')}</p>
             </div>
             <div className="resv__widget">
-              <iframe
-                src={`https://bookings.zenchef.com/results?rid=${ZENCHEF_RID}&pid=1001`}
-                title="Réservation Vila Thaï Lounge — ZenChef"
-                width="100%"
-                frameBorder="0"
-                allow="payment"
+              <div
+                className="zc-widget-config"
+                data-restaurant={ZENCHEF_RID}
+                data-open="2000"
               />
             </div>
           </>
