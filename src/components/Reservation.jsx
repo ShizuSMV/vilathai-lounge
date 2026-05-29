@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import './Reservation.scss'
 
@@ -10,26 +9,6 @@ export default function Reservation() {
   const { t }        = useTranslation()
   const now          = new Date()
   const isEventNight = now >= EVENT_NIGHT_START && now <= EVENT_NIGHT_END
-
-  useEffect(() => {
-    if (isEventNight) return
-
-    // Supprimer l'ancien script s'il existe (évite les doublons au HMR)
-    const old = document.getElementById('zenchef-sdk')
-    if (old) old.remove()
-
-    // Charger le script APRÈS que le div est dans le DOM
-    const script = document.createElement('script')
-    script.id    = 'zenchef-sdk'
-    script.async = true
-    script.src   = 'https://sdk.zenchef.com/v1/sdk.min.js'
-    document.body.appendChild(script)
-
-    return () => {
-      const el = document.getElementById('zenchef-sdk')
-      if (el) el.remove()
-    }
-  }, [isEventNight])
 
   return (
     <section id="reservation" className="resv">
@@ -50,10 +29,12 @@ export default function Reservation() {
               <p className="resv__subtitle">{t('reservation.subtitle')}</p>
             </div>
             <div className="resv__widget">
-              <div
-                className="zc-widget-config"
-                data-restaurant={ZENCHEF_RID}
-                data-open="2000"
+              <iframe
+                src={`https://bookings.zenchef.com/results?rid=${ZENCHEF_RID}&pid=1001`}
+                title="Réservation Vila Thaï Lounge"
+                width="100%"
+                frameBorder="0"
+                allow="payment"
               />
             </div>
           </>
