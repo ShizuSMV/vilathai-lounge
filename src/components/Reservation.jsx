@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import './Reservation.scss'
 
@@ -10,9 +11,30 @@ export default function Reservation() {
   const now          = new Date()
   const isEventNight = now >= EVENT_NIGHT_START && now <= EVENT_NIGHT_END
 
+  useEffect(() => {
+    if (isEventNight) return
+
+    // Supprimer l'ancien script s'il existe (évite les doublons au HMR)
+    const old = document.getElementById('zenchef-sdk')
+    if (old) old.remove()
+
+    // Charger le script APRÈS que le div est dans le DOM
+    const script = document.createElement('script')
+    script.id    = 'zenchef-sdk'
+    script.async = true
+    script.src   = 'https://sdk.zenchef.com/v1/sdk.min.js'
+    document.body.appendChild(script)
+
+    return () => {
+      const el = document.getElementById('zenchef-sdk')
+      if (el) el.remove()
+    }
+  }, [isEventNight])
+
   return (
     <section id="reservation" className="resv">
       <div className="resv__container">
+
         {isEventNight ? (
           <div className="resv__closed">
             <p className="resv__closed-icon">✦</p>
@@ -36,6 +58,7 @@ export default function Reservation() {
             </div>
           </>
         )}
+
       </div>
     </section>
   )
