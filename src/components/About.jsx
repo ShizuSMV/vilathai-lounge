@@ -40,7 +40,7 @@ export default function About() {
         <div className="about__visual">
           <div className="about__team">
 
-            <div className="about__portrait">
+            <div className="about__portrait about__portrait--bw">
               <img src={sayImg} alt="Say — Gérant Vila Thaï Lounge" loading="lazy" decoding="async" />
               <div className="about__portrait-info">
                 <span className="about__portrait-name">Say</span>
