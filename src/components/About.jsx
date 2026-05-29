@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
-import sayImg from '../assets/img/say-portrait.webp'
-import bgImg  from '../assets/img/salle-ensemble.webp'
+import sayImg    from '../assets/img/say-portrait.webp'
+import matteoImg from '../assets/img/matteo-portrait.webp'
+import bgImg     from '../assets/img/salle-ensemble.webp'
 import './About.scss'
 
 export default function About() {
@@ -37,13 +38,24 @@ export default function About() {
         </div>
 
         <div className="about__visual">
-          <div className="about__frame">
-            <img src={sayImg} alt="Say — Gérant Vila Thaï Lounge" className="about__img" loading="lazy" decoding="async" />
-            <div className="about__frame-accent" />
-            <div className="about__gerant">
-              <span className="about__gerant-name">Say</span>
-              <span className="about__gerant-role">{t('about.gerant_role')}</span>
+          <div className="about__team">
+
+            <div className="about__portrait">
+              <img src={sayImg} alt="Say — Gérant Vila Thaï Lounge" loading="lazy" decoding="async" />
+              <div className="about__portrait-info">
+                <span className="about__portrait-name">Say</span>
+                <span className="about__portrait-role">{t('about.gerant_role')}</span>
+              </div>
             </div>
+
+            <div className="about__portrait about__portrait--bw">
+              <img src={matteoImg} alt="Matteo — Responsable de salle" loading="lazy" decoding="async" />
+              <div className="about__portrait-info">
+                <span className="about__portrait-name">Matteo</span>
+                <span className="about__portrait-role">{t('about.mdr_role')}</span>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

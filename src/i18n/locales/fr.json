@@ -27,7 +27,8 @@
     "fact2_label": "Cuisine authentique",
     "fact3_value": "Lounge",
     "fact3_label": "Ambiance premium",
-    "gerant_role": "Gérant"
+    "gerant_role": "Gérant",
+    "mdr_role": "Responsable de salle"
   },
   "menu": {
     "tag": "À la carte",
