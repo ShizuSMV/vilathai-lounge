@@ -5,6 +5,7 @@ import imgBar       from '../assets/img/bar-lounge.webp'
 import imgTable     from '../assets/img/table-dressee.webp'
 import imgDecor     from '../assets/img/decor-mains-or.webp'
 import imgEnseigne  from '../assets/img/enseigne.webp'
+import imgSay       from '../assets/img/say-restaurant.webp'
 import './Gallery.scss'
 
 const ITEMS = [
@@ -14,6 +15,7 @@ const ITEMS = [
   { img: imgTable,    featured: false, alt: 'alt4' },
   { img: imgDecor,    featured: true,  alt: 'alt5' },
   { img: imgEnseigne, featured: false, alt: 'alt6' },
+  { img: imgSay,      featured: false, alt: 'alt7' },
 ]
 
 export default function Gallery() {
