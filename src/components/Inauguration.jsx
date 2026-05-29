@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { EVENT_DATE, STEP_OFFSETS, OFFSET_UNIT, END_TIME } from '../config/event'
+import { TEST_MODE, EVENT_DATE, STEP_OFFSETS, OFFSET_UNIT, END_TIME } from '../config/event'
 import './Inauguration.scss'
 
 const STEPS = ['s1', 's2', 's3', 's4', 's5']
