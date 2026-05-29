@@ -98,4 +98,23 @@
     border-top: $border-gold;
     padding-top: 0.85rem;
   }
+
+  &__cta {
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 0.9rem 2.5rem;
+    border: 1px solid $color-gold;
+    font-family: $font-sans;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $color-gold;
+    transition: background $transition, color $transition;
+
+    &:hover {
+      background: $color-gold;
+      color: $color-black;
+    }
+  }
 }

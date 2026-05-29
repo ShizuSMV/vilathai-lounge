@@ -30,7 +30,7 @@ export default function Reservation() {
             </div>
             <div className="resv__widget">
               <iframe
-                src={`https://bookings.zenchef.com/results?rid=${ZENCHEF_RID}&pid=1001`}
+                src={`https://bookings.zenchef.com/results?rid=${ZENCHEF_RID}&pid=1001&color=c9a84c`}
                 title="Réservation Vila Thaï Lounge"
                 width="100%"
                 frameBorder="0"

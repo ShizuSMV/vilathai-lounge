@@ -25,6 +25,8 @@ export default function Cocktails() {
           ))}
         </div>
 
+        <a href="#reservation" className="cocktails__cta">{t('nav.reserve')}</a>
+
       </div>
     </section>
   )
