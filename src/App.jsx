@@ -16,11 +16,24 @@ class ErrorBoundary extends Component {
   constructor(props) { super(props); this.state = { error: null } }
   static getDerivedStateFromError(e) { return { error: e } }
   render() {
-    if (this.state.error) return (
-      <div style={{ color: '#c9a84c', background: '#0f0f0f', padding: '2rem', fontFamily: 'monospace', whiteSpace: 'pre-wrap' }}>
-        <b>Erreur React :</b>{'\n'}{this.state.error.message}{'\n\n'}{this.state.error.stack}
-      </div>
-    )
+    if (this.state.error) {
+      const isDev = import.meta.env.DEV
+      return (
+        <div style={{ color: '#c9a84c', background: '#0f0f0f', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '2rem', textAlign: 'center', fontFamily: 'Georgia, serif' }}>
+          <p style={{ fontSize: '2.5rem', opacity: 0.35, marginBottom: '1rem' }}>✦</p>
+          <h1 style={{ fontSize: '1.4rem', fontWeight: 300, color: '#f5f0eb', marginBottom: '0.75rem' }}>Une erreur est survenue</h1>
+          <p style={{ color: '#a8a09a', fontSize: '0.85rem', marginBottom: '2rem' }}>Veuillez recharger la page ou revenir plus tard.</p>
+          <button onClick={() => window.location.reload()} style={{ border: '1px solid #c9a84c', background: 'none', color: '#c9a84c', padding: '0.75rem 2rem', cursor: 'pointer', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
+            Recharger
+          </button>
+          {isDev && (
+            <pre style={{ marginTop: '2rem', fontSize: '0.68rem', color: '#555', textAlign: 'left', maxWidth: '640px', overflow: 'auto', whiteSpace: 'pre-wrap' }}>
+              {this.state.error.message}{'\n\n'}{this.state.error.stack}
+            </pre>
+          )}
+        </div>
+      )
+    }
     return this.props.children
   }
 }
