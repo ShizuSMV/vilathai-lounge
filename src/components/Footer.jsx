@@ -15,7 +15,7 @@ function MentionsContent() {
       Code APE/NAF : 56.10A — Restauration traditionnelle<br />
       Siège social : 10 rue de l'Arc, 59800 Lille<br />
       Téléphone : +33 3 28 04 69 38<br />
-      Email : <a href="mailto:contact@vilathai.fr">contact@vilathai.fr</a></p>
+      Email : <a href="mailto:vilathailille@gmail.com">vilathailille@gmail.com</a></p>
 
       <h3>Directeur de la publication</h3>
       <p>Say — Gérant de VILATHAI (VT)</p>
@@ -39,7 +39,7 @@ function PrivacyContent() {
     <>
       <h3>Responsable du traitement</h3>
       <p>VILATHAI (VT) — 10 rue de l'Arc, 59800 Lille<br />
-      Contact : <a href="mailto:contact@vilathai.fr">contact@vilathai.fr</a></p>
+      Contact : <a href="mailto:vilathailille@gmail.com">vilathailille@gmail.com</a></p>
 
       <h3>Données collectées</h3>
       <p>Via le formulaire de réservation (ZenChef) : nom, prénom, email, téléphone, nombre de couverts, date et heure. Ces données sont traitées par <strong>ZenChef SAS</strong> en qualité de sous-traitant pour la gestion des réservations.</p>
@@ -56,7 +56,7 @@ function PrivacyContent() {
       Aucun cookie publicitaire ou de mesure d'audience n'est utilisé.</p>
 
       <h3>Vos droits (RGPD)</h3>
-      <p>Vous disposez d'un droit d'accès, de rectification, d'effacement, de portabilité et d'opposition (articles 15 à 22 du RGPD). Contactez-nous : <a href="mailto:contact@vilathai.fr">contact@vilathai.fr</a></p>
+      <p>Vous disposez d'un droit d'accès, de rectification, d'effacement, de portabilité et d'opposition (articles 15 à 22 du RGPD). Contactez-nous : <a href="mailto:vilathailille@gmail.com">vilathailille@gmail.com</a></p>
 
       <h3>Réclamation CNIL</h3>
       <p><a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">cnil.fr</a></p>
