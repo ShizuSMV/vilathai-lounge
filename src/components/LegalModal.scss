@@ -1,0 +1,89 @@
+@use '../styles/variables' as *;
+
+.legal-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  @media (min-width: $bp-md) {
+    align-items: center;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba($color-black, 0.75);
+  }
+
+  &__box {
+    position: relative;
+    background: $color-dark;
+    border: $border-gold;
+    border-bottom: none;
+    width: 100%;
+    max-width: 720px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $bp-md) {
+      border-bottom: $border-gold;
+      max-height: 80vh;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    border-bottom: $border-gold;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font-family: $font-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: $color-gold;
+    letter-spacing: 0.04em;
+  }
+
+  &__close {
+    background: none;
+    border: none;
+    color: $color-cream-muted;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    transition: color $transition;
+    &:hover { color: $color-gold; }
+  }
+
+  &__body {
+    overflow-y: auto;
+    padding: 2rem;
+    color: $color-cream-muted;
+    font-size: 0.85rem;
+    line-height: 1.8;
+    font-family: $font-sans;
+
+    h3 {
+      font-family: $font-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: $color-cream;
+      margin: 1.5rem 0 0.5rem;
+      &:first-child { margin-top: 0; }
+    }
+
+    p { margin-bottom: 0.6rem; }
+
+    strong { color: $color-cream; font-weight: 500; }
+
+    a { color: $color-gold; &:hover { text-decoration: underline; } }
+  }
+}

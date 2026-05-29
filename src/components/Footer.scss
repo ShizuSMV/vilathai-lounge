@@ -136,6 +136,27 @@
     }
   }
 
+  &__legal-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    span { color: $color-gray; font-size: 0.65rem; }
+
+    button {
+      background: none;
+      border: none;
+      font-family: $font-sans;
+      font-size: 0.65rem;
+      color: $color-gray;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      padding: 0;
+      transition: color $transition;
+      &:hover { color: $color-gold; }
+    }
+  }
+
   &__top {
     font-size: 0.68rem;
     letter-spacing: 0.18em;

@@ -1,5 +1,6 @@
 import { Component } from 'react'
-import Navbar      from './components/Navbar'
+import Navbar        from './components/Navbar'
+import CookieBanner  from './components/CookieBanner'
 import Hero        from './components/Hero'
 import Inauguration from './components/Inauguration'
 import About       from './components/About'
@@ -27,6 +28,7 @@ function App() {
   return (
     <ErrorBoundary>
       <Navbar />
+      <CookieBanner />
       <main>
         <Hero />
         <Inauguration />
