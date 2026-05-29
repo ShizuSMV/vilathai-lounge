@@ -2,13 +2,84 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Vila Thaï Lounge — Restaurant thaïlandais au cœur de Lille. Produits frais, cadre élégant, 10 rue de l'Arc." />
+
+    <!-- SEO -->
     <title>Vila Thaï Lounge | Restaurant Thaïlandais — Lille</title>
+    <meta name="description" content="Vila Thaï Lounge — Restaurant lounge thaïlandais au cœur de Lille. Cuisine authentique, cadre élégant. 10 rue de l'Arc, 59800 Lille. Ouvert du mardi au samedi soir." />
+    <meta name="keywords" content="restaurant thaïlandais Lille, Vila Thai Lounge, cuisine thai Lille, restaurant lounge Lille, réservation restaurant Lille" />
+    <link rel="canonical" href="https://vilathai.fr" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="restaurant.restaurant" />
+    <meta property="og:site_name" content="Vila Thaï Lounge" />
+    <meta property="og:title" content="Vila Thaï Lounge | Restaurant Thaïlandais — Lille" />
+    <meta property="og:description" content="Restaurant lounge thaïlandais au cœur de Lille. Cuisine authentique, cadre élégant. Ouvert du mardi au samedi soir, 19h–22h30." />
+    <meta property="og:image" content="https://vilathai.fr/og-image.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://vilathai.fr" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Vila Thaï Lounge | Restaurant Thaïlandais — Lille" />
+    <meta name="twitter:description" content="Restaurant lounge thaïlandais au cœur de Lille. Cuisine authentique, cadre élégant." />
+    <meta name="twitter:image" content="https://vilathai.fr/og-image.webp" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0f0f0f" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Vila Thaï Lounge",
+      "description": "Restaurant lounge thaïlandais au cœur de Lille. Cuisine authentique, cadre élégant alliant art de vivre asiatique et architecture haussmannienne.",
+      "url": "https://vilathai.fr",
+      "telephone": "+33328046938",
+      "email": "contact@vilathai.fr",
+      "image": "https://vilathai.fr/og-image.webp",
+      "priceRange": "€€",
+      "servesCuisine": "Thai",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Cash, Credit Card",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "10 rue de l'Arc",
+        "addressLocality": "Lille",
+        "postalCode": "59800",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.6365,
+        "longitude": 3.0635
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "19:00",
+          "closes": "22:30"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/vila_thailille",
+        "https://www.facebook.com/profile.php?id=61567117061456"
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

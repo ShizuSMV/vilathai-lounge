@@ -38,7 +38,7 @@ export default function About() {
 
         <div className="about__visual">
           <div className="about__frame">
-            <img src={sayImg} alt="Say — Gérant Vila Thaï Lounge" className="about__img" />
+            <img src={sayImg} alt="Say — Gérant Vila Thaï Lounge" className="about__img" loading="lazy" decoding="async" />
             <div className="about__frame-accent" />
             <div className="about__gerant">
               <span className="about__gerant-name">Say</span>

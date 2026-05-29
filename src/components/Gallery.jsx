@@ -38,7 +38,7 @@ export default function Gallery() {
               className={`gallery__item${item.featured ? ' gallery__item--featured' : ''}`}
             >
               <div className="gallery__cell">
-                <img src={item.img} alt={t(`gallery.${item.alt}`)} />
+                <img src={item.img} alt={t(`gallery.${item.alt}`)} loading="lazy" decoding="async" />
                 <div className="gallery__cell-overlay">
                   <span>{t(`gallery.${item.alt}`)}</span>
                 </div>
