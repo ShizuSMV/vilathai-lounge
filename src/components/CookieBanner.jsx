@@ -1,14 +1,17 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './CookieBanner.scss'
 
 const KEY = 'vt-cookie-consent'
 
 export default function CookieBanner() {
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    if (!localStorage.getItem(KEY)) setVisible(true)
-  }, [])
+  const [visible, setVisible] = useState(() => {
+    try {
+      return !localStorage.getItem(KEY)
+    } catch {
+      // localStorage indisponible (navigation privée) : pas de bandeau, donc pas d'écriture non plus
+      return false
+    }
+  })
 
   const accept = () => { localStorage.setItem(KEY, 'accepted'); setVisible(false) }
   const refuse = () => { localStorage.setItem(KEY, 'refused');  setVisible(false) }

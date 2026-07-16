@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import imgSalle     from '../assets/img/salle-principale.webp'
-import imgLounge    from '../assets/img/salle-lounge.webp'
-import imgBar       from '../assets/img/bar-lounge.webp'
+import imgAmbiance  from '../assets/img/salle-ambiance.webp'
+import imgBar       from '../assets/img/bar.webp'
 import imgTable     from '../assets/img/table-dressee.webp'
 import imgDecor     from '../assets/img/decor-mains-or.webp'
 import imgEnseigne  from '../assets/img/enseigne.webp'
@@ -10,7 +10,7 @@ import './Gallery.scss'
 
 const ITEMS = [
   { img: imgSalle,    featured: true,  alt: 'alt1' },
-  { img: imgLounge,   featured: false, alt: 'alt2' },
+  { img: imgAmbiance, featured: false, alt: 'alt2' },
   { img: imgBar,      featured: false, alt: 'alt3' },
   { img: imgTable,    featured: false, alt: 'alt4' },
   { img: imgDecor,    featured: true,  alt: 'alt5' },

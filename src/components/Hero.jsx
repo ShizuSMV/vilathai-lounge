@@ -13,11 +13,18 @@ export default function Hero() {
       <div className="hero__content">
         <p className="hero__location">{t('hero.location')}</p>
         <h1 className="hero__title">
-          Vila&nbsp;Thaï<span>Lounge</span>
+          Vila&nbsp;Thaï
         </h1>
         <div className="hero__divider" />
         <p className="hero__subtitle">{t('hero.subtitle')}</p>
-        <p className="hero__address">{t('hero.address')}</p>
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Vila+Thai+Lille"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hero__address"
+        >
+          {t('hero.address')}
+        </a>
         <a href="#reservation" className="hero__cta">{t('hero.cta')}</a>
       </div>
 

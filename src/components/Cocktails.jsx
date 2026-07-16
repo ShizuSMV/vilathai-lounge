@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import './Cocktails.scss'
 
-const COCKTAILS = ['c1', 'c2', 'c3', 'c4', 'c5']
+const COCKTAILS = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6']
 
 export default function Cocktails() {
   const { t } = useTranslation()

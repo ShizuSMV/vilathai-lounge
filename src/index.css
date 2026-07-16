@@ -16,6 +16,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.35s ease, color 0.25s ease;
 }
 
 img {
@@ -45,4 +46,259 @@ input, select, textarea {
 
 #root {
   width: 100%;
+}
+
+/* ─── Theme transitions ─────────────────────────────────────── */
+.nav::before,
+.nav__links,
+.nav__lang,
+.nav__theme,
+.menu,
+.cocktails,
+.gallery,
+.resv,
+.footer,
+.dish-card,
+.cocktails__card,
+.resv__closed,
+.resv__widget,
+.cookie-banner,
+.legal-modal__box {
+  transition: background-color 0.35s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   LIGHT THEME  — inspiré de l'affiche Vila Thai
+   fond crème chaud · texte brun · or inchangé
+───────────────────────────────────────────────────────────── */
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="light"] body {
+  background-color: #faf3e8;
+  color: #1e150f;
+}
+
+/* Navbar */
+[data-theme="light"] .nav::before {
+  background: rgba(240, 232, 216, 0.96);
+}
+[data-theme="light"] .nav--scrolled {
+  border-bottom-color: rgba(184, 146, 46, 0.3);
+}
+[data-theme="light"] .nav__logo span {
+  color: #8b7355;
+}
+[data-theme="light"] .nav__lang,
+[data-theme="light"] .nav__theme {
+  color: #7a6254;
+  border-color: rgba(184, 146, 46, 0.35);
+}
+[data-theme="light"] .nav__lang:hover,
+[data-theme="light"] .nav__theme:hover {
+  color: #c9a84c;
+  border-color: rgba(201, 168, 76, 0.65);
+}
+[data-theme="light"] .nav__burger span {
+  background: #c9a84c;
+}
+[data-theme="light"] .nav__links {
+  background: #f0e5d0;
+  border-left-color: rgba(201, 168, 76, 0.25);
+}
+[data-theme="light"] .nav__links a {
+  color: #1e150f;
+}
+[data-theme="light"] .nav__links a:hover {
+  color: #c9a84c;
+}
+[data-theme="light"] .nav__links a::after {
+  background: #c9a84c;
+}
+[data-theme="light"] .nav__lang-mobile {
+  border-top-color: rgba(201, 168, 76, 0.25);
+}
+[data-theme="light"] .nav__lang-mobile button,
+[data-theme="light"] .nav__theme-mobile button {
+  color: #7a6254;
+}
+
+/* Menu */
+[data-theme="light"] .menu {
+  background: #faf3e8;
+}
+[data-theme="light"] .menu__title {
+  color: #1e150f;
+}
+[data-theme="light"] .menu__tab {
+  color: #7a6254;
+  border-color: rgba(184, 146, 46, 0.3);
+}
+[data-theme="light"] .menu__tab:hover,
+[data-theme="light"] .menu__tab--active {
+  color: #1e150f;
+  border-color: #c9a84c;
+}
+[data-theme="light"] .menu__reserve-btn {
+  border-color: rgba(184, 146, 46, 0.45);
+}
+[data-theme="light"] .menu__reserve-btn:hover {
+  color: #1e150f;
+}
+[data-theme="light"] .dish-card {
+  background: #e4d6bc;
+  border-color: rgba(184, 146, 46, 0.25);
+}
+[data-theme="light"] .dish-card__name {
+  color: #1e150f;
+}
+[data-theme="light"] .dish-card__desc {
+  color: #7a6254;
+}
+
+/* Cocktails */
+[data-theme="light"] .cocktails {
+  background: #faf3e8;
+}
+[data-theme="light"] .cocktails__title {
+  color: #1e150f;
+}
+[data-theme="light"] .cocktails__subtitle {
+  color: #7a6254;
+}
+[data-theme="light"] .cocktails__card {
+  background: #e4d6bc;
+  border-color: rgba(184, 146, 46, 0.25);
+}
+[data-theme="light"] .cocktails__price {
+  color: #1e150f;
+  border-top-color: rgba(184, 146, 46, 0.25);
+}
+[data-theme="light"] .cocktails__desc {
+  color: #7a6254;
+}
+[data-theme="light"] .cocktails__cta {
+  border-color: rgba(184, 146, 46, 0.5);
+}
+[data-theme="light"] .cocktails__cta:hover {
+  color: #1e150f;
+}
+
+/* Gallery */
+[data-theme="light"] .gallery {
+  background: #ede2cf;
+}
+[data-theme="light"] .gallery__title {
+  color: #1e150f;
+}
+[data-theme="light"] .gallery__subtitle {
+  color: #7a6254;
+}
+
+/* Reservation */
+[data-theme="light"] .resv {
+  background: #faf3e8;
+}
+[data-theme="light"] .resv__title {
+  color: #1e150f;
+}
+[data-theme="light"] .resv__subtitle {
+  color: #7a6254;
+}
+[data-theme="light"] .resv__closed {
+  background: #e4d6bc;
+  border-color: rgba(184, 146, 46, 0.25);
+}
+[data-theme="light"] .resv__closed-title {
+  color: #1e150f;
+}
+[data-theme="light"] .resv__closed-msg {
+  color: #7a6254;
+}
+[data-theme="light"] .resv__widget {
+  background: #e4d6bc;
+  border-color: rgba(184, 146, 46, 0.25);
+}
+
+/* Footer map */
+[data-theme="light"] .footer__map iframe {
+  filter: grayscale(15%);
+}
+
+/* Footer */
+[data-theme="light"] .footer {
+  background: #ede2cf;
+  border-top-color: rgba(201, 168, 76, 0.25);
+}
+[data-theme="light"] .footer__logo em {
+  color: #8b7355;
+}
+[data-theme="light"] .footer__tagline {
+  color: #7a6254;
+}
+[data-theme="light"] .footer__col address,
+[data-theme="light"] .footer__col a {
+  color: #7a6254;
+}
+[data-theme="light"] .footer__hours li {
+  color: #7a6254;
+}
+[data-theme="light"] .footer__hours li span:first-child {
+  color: #1e150f;
+}
+[data-theme="light"] .footer__access p {
+  color: #7a6254;
+}
+[data-theme="light"] .footer__bottom {
+  border-top-color: rgba(201, 168, 76, 0.2);
+}
+[data-theme="light"] .footer__bottom p {
+  color: #a09280;
+}
+[data-theme="light"] .footer__legal-links span,
+[data-theme="light"] .footer__legal-links button {
+  color: #a09280;
+}
+
+/* Cookie Banner */
+[data-theme="light"] .cookie-banner {
+  background: #ede2cf;
+  border-top-color: rgba(201, 168, 76, 0.25);
+}
+[data-theme="light"] .cookie-banner__text {
+  color: #7a6254;
+}
+[data-theme="light"] .cookie-banner__refuse {
+  color: #7a6254;
+  border-color: rgba(122, 98, 84, 0.3);
+}
+[data-theme="light"] .cookie-banner__refuse:hover {
+  border-color: #7a6254;
+  color: #1e150f;
+}
+[data-theme="light"] .cookie-banner__accept {
+  color: #1e150f;
+}
+
+/* Legal Modal */
+[data-theme="light"] .legal-modal__overlay {
+  background: rgba(30, 21, 15, 0.65);
+}
+[data-theme="light"] .legal-modal__box {
+  background: #ede2cf;
+}
+[data-theme="light"] .legal-modal__header {
+  border-bottom-color: rgba(201, 168, 76, 0.25);
+}
+[data-theme="light"] .legal-modal__close {
+  color: #7a6254;
+}
+[data-theme="light"] .legal-modal__body {
+  color: #7a6254;
+}
+[data-theme="light"] .legal-modal__body h3,
+[data-theme="light"] .legal-modal__body strong {
+  color: #1e150f;
 }

@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next'
 import Navbar        from './components/Navbar'
 import CookieBanner  from './components/CookieBanner'
 import Hero          from './components/Hero'
-import Inauguration  from './components/Inauguration'
 import About         from './components/About'
 import Menu          from './components/Menu'
 import Cocktails     from './components/Cocktails'
@@ -52,7 +51,6 @@ function App() {
       <CookieBanner />
       <main>
         <Hero />
-        <Inauguration />
         <About />
         <Menu />
         <Cocktails />

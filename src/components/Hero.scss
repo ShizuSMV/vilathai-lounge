@@ -59,15 +59,6 @@
     letter-spacing: 0.02em;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
-
-    span {
-      display: block;
-      font-size: 0.38em;
-      font-weight: 600;
-      letter-spacing: 0.42em;
-      color: $color-gold;
-      margin-top: 0.4em;
-    }
   }
 
   &__divider {
@@ -95,6 +86,10 @@
     color: $color-cream-muted;
     margin-bottom: 2.5rem;
     opacity: 0.7;
+    transition: opacity $transition;
+    display: inline-block;
+
+    &:hover { opacity: 1; }
   }
 
   &__cta {

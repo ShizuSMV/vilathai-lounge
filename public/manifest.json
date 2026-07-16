@@ -1,7 +1,7 @@
 {
-  "name": "Vila Thaï Lounge",
+  "name": "Vila Thaï",
   "short_name": "Vila Thaï",
-  "description": "Restaurant lounge thaïlandais au cœur de Lille",
+  "description": "Restaurant thaïlandais au cœur de Lille",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f0f0f",

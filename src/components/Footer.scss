@@ -32,17 +32,6 @@
     display: block;
     margin-bottom: 0.7rem;
     letter-spacing: 0.04em;
-
-    em {
-      display: block;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 0.56em;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: $color-cream-muted;
-      margin-top: 0.15em;
-    }
   }
 
   &__tagline {
@@ -99,6 +88,19 @@
     }
   }
 
+  &__map-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: $color-gold !important;
+    border-bottom: 1px solid rgba($color-gold, 0.3);
+    padding-bottom: 1px;
+    transition: border-color $transition, opacity $transition;
+
+    &:hover { border-color: $color-gold; opacity: 0.8; }
+  }
+
   &__access {
     margin-top: 1.5rem;
 
@@ -116,6 +118,19 @@
     display: flex;
     flex-direction: column;
     gap: 0.45rem;
+  }
+
+  &__map {
+    border-top: $border-gold;
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 300px;
+      border: none;
+      filter: invert(90%) hue-rotate(180deg) brightness(0.85) contrast(0.9) saturate(0.85);
+      transition: filter $transition;
+    }
   }
 
   &__bottom {

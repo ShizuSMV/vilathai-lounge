@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { END_TIME } from '../config/event'
 import './Navbar.scss'
 
 const ALL_LINKS = [
   { href: '#accueil',   key: 'nav.home' },
-  { href: '#evenement', key: 'nav.event',     eventOnly: true },
   { href: '#apropos',   key: 'nav.about' },
   { href: '#cuisine',   key: 'nav.cuisine' },
   { href: '#cocktails', key: 'nav.cocktails' },
@@ -14,9 +12,15 @@ const ALL_LINKS = [
 
 export default function Navbar() {
   const { t, i18n } = useTranslation()
-  const [menuOpen,   setMenuOpen]   = useState(false)
-  const [scrolled,   setScrolled]   = useState(false)
-  const [eventOver,  setEventOver]  = useState(() => new Date() >= END_TIME)
+  const [menuOpen,  setMenuOpen]  = useState(false)
+  const [scrolled,  setScrolled]  = useState(false)
+  const [theme,     setTheme]     = useState(() => {
+    try {
+      const saved = localStorage.getItem('vila-theme')
+      if (saved) return saved
+    } catch { /* localStorage indisponible (navigation privée) : on retombe sur la préférence système */ }
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  })
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -25,33 +29,40 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
-    if (eventOver) return
-    const id = setInterval(() => {
-      if (new Date() >= END_TIME) { setEventOver(true); clearInterval(id) }
-    }, 5000)
-    return () => clearInterval(id)
-  }, [eventOver])
-
-  useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
-  const close      = () => setMenuOpen(false)
-  const toggleLang = () => i18n.changeLanguage(i18n.language === 'fr' ? 'en' : 'fr')
-  const links      = ALL_LINKS.filter(l => !l.eventOnly || !eventOver)
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    const meta = document.querySelector('meta[name="theme-color"]')
+    if (meta) meta.content = theme === 'dark' ? '#0f0f0f' : '#faf3e8'
+    try { localStorage.setItem('vila-theme', theme) } catch { /* le thème reste appliqué, il ne sera juste pas mémorisé */ }
+  }, [theme])
+
+  const close       = () => setMenuOpen(false)
+  const toggleLang  = () => i18n.changeLanguage(i18n.language === 'fr' ? 'en' : 'fr')
+  const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark')
+  const links       = ALL_LINKS
 
   return (
     <>
       <nav className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
         <div className="nav__inner">
           <a href="#accueil" className="nav__logo" onClick={close}>
-            Vila Thaï<span>Lounge</span>
+            Vila Thaï
           </a>
 
           <div className="nav__right">
             <button className="nav__lang" onClick={toggleLang} aria-label="Changer de langue">
               {i18n.language === 'fr' ? '🇬🇧 EN' : '🇫🇷 FR'}
+            </button>
+            <button
+              className="nav__theme"
+              onClick={toggleTheme}
+              aria-label={theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre'}
+            >
+              {theme === 'dark' ? '☀' : '☽'}
             </button>
             <button
               className={`nav__burger${menuOpen ? ' nav__burger--open' : ''}`}
@@ -84,6 +95,11 @@ export default function Navbar() {
         <li className="nav__lang-mobile">
           <button onClick={toggleLang}>
             {i18n.language === 'fr' ? '🇬🇧 English' : '🇫🇷 Français'}
+          </button>
+        </li>
+        <li className="nav__theme-mobile">
+          <button onClick={() => { toggleTheme(); close() }}>
+            {theme === 'dark' ? '☀ Mode clair' : '☽ Mode sombre'}
           </button>
         </li>
       </ul>

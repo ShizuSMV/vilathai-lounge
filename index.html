@@ -9,16 +9,16 @@
     <meta name="google-site-verification" content="PGqUHU_wcfxhB7BrS2Ih4J8egXsJAVfuboNOvaqUonU" />
 
     <!-- SEO -->
-    <title>Vila Thaï Lounge | Restaurant Thaïlandais — Lille</title>
-    <meta name="description" content="Vila Thaï Lounge — Restaurant lounge thaïlandais au cœur de Lille. Cuisine authentique, cadre élégant. 10 rue de l'Arc, 59800 Lille. Ouvert du mardi au samedi soir." />
-    <meta name="keywords" content="restaurant thaïlandais Lille, Vila Thai Lounge, cuisine thai Lille, restaurant lounge Lille, réservation restaurant Lille" />
+    <title>Vila Thaï | Restaurant Thaïlandais — Lille</title>
+    <meta name="description" content="Vila Thaï — Restaurant thaïlandais au cœur de Lille. Cuisine authentique, cadre élégant. 10 rue de l'Arc, 59800 Lille. Ouvert du mardi au samedi soir." />
+    <meta name="keywords" content="restaurant thaïlandais Lille, Vila Thai, cuisine thai Lille, restaurant thai Lille, réservation restaurant Lille" />
     <link rel="canonical" href="https://vilathai.fr" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="restaurant.restaurant" />
-    <meta property="og:site_name" content="Vila Thaï Lounge" />
-    <meta property="og:title" content="Vila Thaï Lounge | Restaurant Thaïlandais — Lille" />
-    <meta property="og:description" content="Restaurant lounge thaïlandais au cœur de Lille. Cuisine authentique, cadre élégant. Ouvert du mardi au samedi soir, 19h–22h30." />
+    <meta property="og:site_name" content="Vila Thaï" />
+    <meta property="og:title" content="Vila Thaï | Restaurant Thaïlandais — Lille" />
+    <meta property="og:description" content="Restaurant thaïlandais au cœur de Lille. Cuisine authentique, cadre élégant. Ouvert du mardi au samedi soir, 19h–22h30." />
     <meta property="og:image" content="https://vilathai.fr/og-image.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -27,8 +27,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Vila Thaï Lounge | Restaurant Thaïlandais — Lille" />
-    <meta name="twitter:description" content="Restaurant lounge thaïlandais au cœur de Lille. Cuisine authentique, cadre élégant." />
+    <meta name="twitter:title" content="Vila Thaï | Restaurant Thaïlandais — Lille" />
+    <meta name="twitter:description" content="Restaurant thaïlandais au cœur de Lille. Cuisine authentique, cadre élégant." />
     <meta name="twitter:image" content="https://vilathai.fr/og-image.webp" />
 
     <!-- Favicon -->
@@ -48,8 +48,8 @@
     {
       "@context": "https://schema.org",
       "@type": "Restaurant",
-      "name": "Vila Thaï Lounge",
-      "description": "Restaurant lounge thaïlandais au cœur de Lille. Cuisine authentique, cadre élégant alliant art de vivre asiatique et architecture haussmannienne.",
+      "name": "Vila Thaï",
+      "description": "Restaurant thaïlandais au cœur de Lille. Cuisine authentique, cadre élégant alliant art de vivre asiatique et architecture haussmannienne.",
       "url": "https://vilathai.fr",
       "telephone": "+33328046938",
       "email": "vilathailille@gmail.com",
@@ -73,9 +73,27 @@
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "dayOfWeek": ["Tuesday"],
+          "opens": "12:00",
+          "closes": "14:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday"],
           "opens": "19:00",
           "closes": "22:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "12:00",
+          "closes": "14:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "19:00",
+          "closes": "23:30"
         }
       ],
       "sameAs": [
@@ -83,6 +101,16 @@
         "https://www.facebook.com/profile.php?id=61567117061456"
       ]
     }
+    </script>
+    <!-- Theme init — prevents flash of wrong theme before React loads -->
+    <script>
+      (function() {
+        try {
+          var s = localStorage.getItem('vila-theme');
+          var t = s || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+          document.documentElement.setAttribute('data-theme', t);
+        } catch(e) {}
+      })();
     </script>
   </head>
   <body>

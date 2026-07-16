@@ -84,7 +84,7 @@ export default function Footer() {
         <div className="footer__grid">
 
           <div className="footer__brand">
-            <span className="footer__logo">Vila Thaï<em>Lounge</em></span>
+            <span className="footer__logo">Vila Thaï</span>
             <p className="footer__tagline">{t('footer.tagline')}</p>
           </div>
 
@@ -92,13 +92,24 @@ export default function Footer() {
             <h4>{t('footer.find_us')}</h4>
             <address>10 rue de l'Arc<br />59800 Lille</address>
             <a href="tel:+33328046938">+33 3 28 04 69 38</a>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Vila+Thai+Lille"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer__map-link"
+            >
+              {t('footer.map_link')} →
+            </a>
           </div>
 
           <div className="footer__col">
             <h4>{t('footer.hours_title')}</h4>
             <ul className="footer__hours">
-              <li><span>{t('footer.open_days')}</span><span>{t('footer.open_hours')}</span></li>
-              <li><span>{t('footer.monday')}</span><span>{t('footer.monday_hours')}</span></li>
+              <li><span>{t('footer.day_lun')}</span><span>{t('footer.closed')}</span></li>
+              <li><span>{t('footer.day_mar')}</span><span>12h – 14h &nbsp;·&nbsp; 19h – 22h30</span></li>
+              <li><span>{t('footer.day_mer_ven')}</span><span>19h – 22h30</span></li>
+              <li><span>{t('footer.day_sam')}</span><span>12h – 14h &nbsp;·&nbsp; 19h – 23h30</span></li>
+              <li><span>{t('footer.day_dim')}</span><span>{t('footer.closed')}</span></li>
             </ul>
             <div className="footer__access">
               <h4>{t('footer.access_title')}</h4>
@@ -117,8 +128,17 @@ export default function Footer() {
 
         </div>
 
+        <div className="footer__map">
+          <iframe
+            src="https://maps.google.com/maps?q=50.6365,3.0635&output=embed&z=17&hl=fr"
+            title="Vila Thaï — 10 rue de l'Arc, Lille"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+
         <div className="footer__bottom">
-          <p>© {year} Vila Thaï Lounge · {t('footer.rights')}</p>
+          <p>© {year} Vila Thaï · {t('footer.rights')}</p>
           <div className="footer__legal-links">
             <button onClick={() => setModal('mentions')}>Mentions légales</button>
             <span>·</span>
